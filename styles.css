@@ -1,0 +1,83 @@
+/* general styles */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: #daded4;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    color: #fff;
+    background-color: #39603d;
+}
+header h1 {
+    font-weight: 700;
+}
+h2 {
+    color: #fff;
+}
+
+/* app styles */
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+    width: 80%;
+    background-color: #3C403D;
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+.app-container div {
+    margin: 1rem;
+    width: 400px;
+}
+
+/* card styles */
+.app-container .card {
+    width: 350px;
+    margin: 1rem auto;
+
+}
+
+/* search section styles */
+.app-container .search-section form.search-bar {
+    height: 50px;
+}
+.app-container .search-section form.search-bar input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+.app-container .search-section .search-results {
+    border-radius: 5px;
+    margin: 1rem 0;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+.app-container .search-section .search-results h4 {
+    padding: 1rem .5rem;
+    color: #39603d;
+    border-bottom: 2px solid #39603d;
+}
+
+/* wishlist books section styles */
+.app-container .wishlist-books-section .wishlist-books-list {
+    border-radius: 5px;
+    margin: 1rem 0;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+
+/* completed books section styles */
+.app-container .completed-books-section .completed-books-list {
+    border-radius: 5px;
+    margin: 1rem 0;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}

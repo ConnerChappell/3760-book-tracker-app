@@ -11,13 +11,56 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="./styles.css">
 
     <title>Book Tracker App</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Book Tracker App</h1>
+    </header>
+
+    <div class="app-container">
+        <div class="search-section">
+            <h2>Search</h2>
+            <form class="d-flex search-bar">
+                <input class="form-control me-2" type="search" placeholder="Enter a Book or Author" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+
+            <div class="search-results">
+                <h4>Search Results</h4>
+
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Author</h6>
+                        <p class="card-text">Published Date</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="wishlist-books-section">
+            <h2>Books to Read</h2>
+
+            <div class="wishlist-books-list">
+                
+            </div>
+        </div>
+
+        <div class="completed-books-section">
+            <h2>Books Completed</h2>
+
+            <div class="completed-books-list">
+                
+            </div>
+        </div>
+    </div>
 
 
     <!-- JavaScript Bundle with Popper -->
