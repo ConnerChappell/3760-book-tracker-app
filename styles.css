@@ -47,6 +47,12 @@ h2 {
     box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
 
 }
+.app-container .card button {
+    background-color: #39603d;
+}
+.app-container .card button:hover {
+    filter: brightness(110%);
+}
 .app-container .card button#add-to-completed-books-btn {
     margin-left: 1rem;
 }
@@ -62,10 +68,13 @@ h2 {
     outline: none;
     box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
 }
-.app-container .search-section div.search-bar button{
+.app-container .search-section div.search-bar button {
     background-color: #39603d;
     border: none;
     box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+.app-container .search-section div.search-bar button:hover {
+    filter: brightness(110%);
 }
 .app-container .search-section .search-results-container {
     border-radius: 5px;
