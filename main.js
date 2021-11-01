@@ -16,6 +16,7 @@ searchBtn.addEventListener("click", (event) => {
 })
 
 function getSearchResults() {
+    searchResultsDiv.innerHTML = ""
     let searchValue = searchInput.value
 
     fetch(`https://openlibrary.org/search.json?q=${searchValue}&limit=15`)
