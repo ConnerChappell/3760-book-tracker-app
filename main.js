@@ -3,6 +3,7 @@ const searchBtn = document.querySelector('.book-search-btn')
 const searchResultsDiv = document.querySelector('.search-results')
 // let searchResults = []
 
+// Search input and button event listeners
 searchInput.addEventListener("keydown", (event) => {
     if (event.code === "Enter") {
         getSearchResults()
@@ -15,6 +16,7 @@ searchBtn.addEventListener("click", (event) => {
     searchInput.value = ""
 })
 
+// function that fetches search results from the open library api
 function getSearchResults() {
     searchResultsDiv.innerHTML = ""
     let searchValue = searchInput.value
@@ -33,6 +35,7 @@ function getSearchResults() {
         })
 }
 
+// Adds cards to search results list 
 function addToList(bookKey, bookTitle, bookAuthor, yearPublished) {
     let card = document.createElement("div")
     card.classList.add("card")
