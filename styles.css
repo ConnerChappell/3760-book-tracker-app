@@ -99,14 +99,19 @@ h2 {
 .app-container .wishlist-books-section .wishlist-books-list {
     border-radius: 5px;
     margin: 1rem 0;
+    padding: 1rem 0;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+.app-container .wishlist-books-section .wishlist-books-list button#add-to-completed-books-btn {
+    margin-left: 0;
 }
 
 /* completed books section styles */
 .app-container .completed-books-section .completed-books-list {
     border-radius: 5px;
     margin: 1rem 0;
+    padding: 1rem 0;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
 }
