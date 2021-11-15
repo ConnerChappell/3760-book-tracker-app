@@ -140,6 +140,9 @@ function displayCompletedBooks () {
                 </div>
             `
             completedBooksDiv.appendChild(card)
+        } if (book.wishList) {
+            book.wishList = false
+            displayWishList()
         }
     })
 }
