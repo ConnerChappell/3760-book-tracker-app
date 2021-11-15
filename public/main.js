@@ -49,7 +49,6 @@ function getSearchResults() {
                     yearPublished: book.first_publish_year,
                     wishList: false,
                     completed: false,
-                    rating: 0,
                 }
             })
             displaySearchResults()

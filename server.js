@@ -22,8 +22,20 @@ app.use(bodyParser.text())
 
 app.use(express.static('public'))
 
-// GET wishlist
+// Book format
+//      id: book.edition_key[0],
+//      title: book.title,
+//      author: book.author_name,
+//      yearPublished: book.first_publish_year,
+//      wishList: false,
+//      completed: false,
 
+// GET wishlist
+app.get("/wishListBooks", async (req, res) => {
+    const wishListBooks = await Book.find({wishlist: req.body.wishList === 'true'})
+    console.log(wishListBooks)
+    res.json(wishListBooks)
+})
 
 // GET completed list
 
