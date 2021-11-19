@@ -30,17 +30,42 @@ app.use(express.static('public'))
 //      wishList: false,
 //      completed: false,
 
-// GET wishlist
-app.get("/wishListBooks", async (req, res) => {
-    const wishListBooks = await Book.find({wishlist: req.body.wishList === 'true'})
-    console.log(wishListBooks)
-    res.json(wishListBooks)
+// GET all books
+app.get("/allBooks", async (req, res) => {
+    const books = await Book.find()
+    console.log(books)
+    res.json(books)
 })
+
+// GET wishlist
+// app.get("/wishListBooks", async (req, res) => {
+//     const wishListBooks = await Book.find({wishList: req.body.wishList === 'true'})
+//     // console.log(wishListBooks)
+//     res.json(wishListBooks)
+// })
 
 // GET completed list
 
 
 // POST wishlist
+app.post("/addToWishList", async (req, res) => {
+    let wishListBooks = await Book.find({wishList: req.body.wishList === 'true'})
 
+    const newBook = await new Book({
+        id: req.body.id,
+        title: req.body.title,
+        author: req.body.author,
+        yearPublished: req.body.yearPublished,
+        wishList: req.body.wishList,
+        completed: req.body.completed,
+    })
+
+    newBook.save()
+        .then(async () => {
+            wishListBooks = await Book.find({wishList: req.body.wishList === 'true'})
+            // console.log(wishListBooks)
+            res.json(wishListBooks)
+        })
+})
 
 // POST completed list

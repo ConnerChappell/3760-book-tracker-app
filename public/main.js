@@ -76,6 +76,15 @@ function displaySearchResults() {
     });
 }
 
+// Fetches and displays all books
+fetch("/allBooks")
+.then(res => res.json())
+.then(data => {
+    console.log("All books below:")
+    console.log(data)
+    data.forEach((book) => displaySearchResults(book))
+})
+
 // change wishList to true or false
 function addToWishlist (event) {
     let bookID = event.target.parentElement.id
@@ -87,6 +96,24 @@ function addToWishlist (event) {
     }
 
     displayWishList()
+
+    fetch("/addToWishList", {
+        method: "POST",
+        body: JSON.stringify({
+            id: `${book.id}`,
+            title: `${book.title}`,
+            author: `${book.author}`,
+            yearPublished: `${book.yearPublished}`,
+            wishList: `${book.wishList}`,
+            completed: `${book.completed}`,
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Accept": "application/json",
+        },
+    })
+    .then((res) => res.json())
+    .then((data) => displaySearchResults(data))
 }
 
 // displays cards of wishList books

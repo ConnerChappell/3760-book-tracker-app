@@ -2,7 +2,7 @@ const { model, Schema } = require('mongoose')
 
 const Book = new Schema({
     id: String,
-    author: Array,
+    author: String,
     title: String,
     yearPublished: Number,
     wishList: {
