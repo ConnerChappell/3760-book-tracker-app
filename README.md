@@ -1,6 +1,13 @@
 # 3760-book-tracker-app
 
-Hosted site: 
+Hosted site: https://book-tracker-app3760.herokuapp.com/
+
+### Features:
+- User is able to search for books ✅
+- User can add books to wishlist ✅
+- User can add books to completed ✅
+- User can move books from wishlist to completed (work in progress)
+- User can rate books they have read (work in progress)
 
 ## Hosted Front-end
 
