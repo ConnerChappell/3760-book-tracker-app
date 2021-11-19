@@ -1,11 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const { mongoURI, port } = require('./config')
+const { mongoURI } = require('./config')
 const Book = require('./models/Book')
 const app = express()
 
-mongoose.connect(mongoURI, {
+const uri = `${mongoURI}`
+
+let port = process.env.PORT || 5000
+
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
