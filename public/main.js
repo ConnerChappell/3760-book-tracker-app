@@ -75,13 +75,11 @@ function displaySearchResults() {
         searchResultsDiv.appendChild(card)
     });
 }
-
-// Fetches and displays all books
+// Fetches all books
 fetch("/allBooks")
 .then(res => res.json())
 .then(data => {
-    console.log("All books below:")
-    console.log(data)
+    console.log("all books:", data)
     data.forEach((book) => displaySearchResults(book))
 })
 
@@ -97,6 +95,7 @@ function addToWishlist (event) {
 
     displayWishList()
 
+    // POST adds book to wishList
     fetch("/addToWishList", {
         method: "POST",
         body: JSON.stringify({
@@ -109,16 +108,14 @@ function addToWishlist (event) {
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8",
-            "Accept": "application/json",
         },
     })
     .then((res) => res.json())
-    .then((data) => displaySearchResults(data))
 }
 
 // displays cards of wishList books
 function displayWishList () {
-    wishlistBooksDiv.innerHTML = ""
+    // wishlistBooksDiv.innerHTML = ""
     searchResults.filter((book) => {
         if (book.wishList) {
             let card = document.createElement("div")
@@ -136,6 +133,32 @@ function displayWishList () {
         }
     })
 }
+// Fetches and displays wishlist
+fetch("/wishListBooks/true", {
+    method: "GET",
+    headers: {
+        "Content-type": "applicaation/json; charset=UTF-8"
+    }
+})
+    .then((res) => res.json())
+    .then((data) => {
+        console.log("wishList books:", data)
+        data.forEach((book) => {
+            // displayWishList()
+            let card = document.createElement("div")
+            card.classList.add("card")
+    
+            card.innerHTML = `
+                <div class="card-body" id=${book.id}>
+                    <h5 class="card-title">${book.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">by ${book.author}</h6>
+                    <p class="card-text">Published in ${book.yearPublished}</p>
+                    <button type="button" class="btn btn-secondary" id="add-to-completed-books-btn">Completed</button>
+                </div>
+            `
+            wishlistBooksDiv.appendChild(card)
+        })
+    })
 
 // change completed to true or false
 function addToCompletedBooks (event) {
@@ -148,11 +171,28 @@ function addToCompletedBooks (event) {
     }
 
     displayCompletedBooks()
+
+    // POST adds books to completed
+    fetch("/addToCompleted", {
+        method: "POST",
+        body: JSON.stringify({
+            id: `${book.id}`,
+            title: `${book.title}`,
+            author: `${book.author}`,
+            yearPublished: `${book.yearPublished}`,
+            wishList: `${book.wishList}`,
+            completed: `${book.completed}`,
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    })
+    .then((res) => res.json())
 }
 
 // displays cards of completed books
 function displayCompletedBooks () {
-    completedBooksDiv.innerHTML = ""
+    // completedBooksDiv.innerHTML = ""
     searchResults.filter((book) => {
         if (book.completed) {
             let card = document.createElement("div")
@@ -172,3 +212,28 @@ function displayCompletedBooks () {
         }
     })
 }
+// Fetches and displays completed
+fetch("/completedBooks/true", {
+    method: "GET",
+    headers: {
+        "Content-type": "applicaation/json; charset=UTF-8"
+    }
+})
+    .then((res) => res.json())
+    .then((data) => {
+        console.log("completed books:", data)
+        data.forEach((book) => {
+            // displayCompletedBooks()
+            let card = document.createElement("div")
+            card.classList.add("card")
+    
+            card.innerHTML = `
+                <div class="card-body" id=${book.id}>
+                    <h5 class="card-title">${book.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">by ${book.author}</h6>
+                    <p class="card-text">Published in ${book.yearPublished}</p>
+                </div>
+            `
+            completedBooksDiv.appendChild(card)
+        })
+    })
